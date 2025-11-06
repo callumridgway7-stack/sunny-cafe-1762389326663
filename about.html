@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunny Cafe - About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-yellow-50 to-orange-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-orange-600">Sunny Cafe</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-orange-600">Home</a>
+                    <a href="menu.html" class="text-gray-700 hover:text-orange-600">Menu</a>
+                    <a href="about.html" class="text-gray-700 hover:text-orange-600">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-orange-600">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-orange-600">Home</a>
+                <a href="menu.html" class="block px-3 py-2 text-gray-700 hover:text-orange-600">Menu</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-orange-600">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-orange-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-20 pb-12 bg-gradient-to-r from-orange-400 to-yellow-500 text-white text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">About Sunny Cafe</h2>
+            <p class="text-xl">Our story and passion</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://via.placeholder.com/600x400?text=Sunny+Cafe" alt="Sunny Cafe Interior" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">A Warm Welcome</h3>
+                    <p class="text-lg text-gray-600 mb-6">Sunny Cafe was founded in 2020 by coffee enthusiasts who dreamed of creating a welcoming space where people could start their day with a smile. Nestled in the heart of the city, our cafe bathes in natural light, offering a sunny escape from the hustle and bustle.</p>
+                    <p class="text-lg text-gray-600">We source our beans from sustainable farms and bake fresh pastries every morning. Our team is dedicated to providing exceptional service and a cozy atmosphere.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <h3 class="text-3xl font-bold text-gray-800 mb-6">What Makes Us Special</h3>
+                <ul class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto text-left">
+                    <li class="bg-white p-4 rounded-lg shadow-md">
+                        <i class="fas fa-leaf text-orange-500 text-2xl mb-2"></i>
+                        <strong>Sustainable Sourcing</strong>
+                        <p class="text-gray-600 text-sm">Eco-friendly practices</p>
+                    </li>
+                    <li class="bg-white p-4 rounded-lg shadow-md">
+                        <i class="fas fa-users text-orange-500 text-2xl mb-2"></i>
+                        <strong>Community Focused</strong>
+                        <p class="text-gray-600 text-sm">Local partnerships</p>
+                    </li>
+                    <li class="bg-white p-4 rounded-lg shadow-md">
+                        <i class="fas fa-heart text-orange-500 text-2xl mb-2"></i>
+                        <strong>Made with Love</strong>
+                        <p class="text-gray-600 text-sm">Passion in every cup</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2023 Sunny Cafe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
