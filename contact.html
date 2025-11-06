@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunny Cafe - Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-yellow-50 to-orange-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-orange-600">Sunny Cafe</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-orange-600">Home</a>
+                    <a href="menu.html" class="text-gray-700 hover:text-orange-600">Menu</a>
+                    <a href="about.html" class="text-gray-700 hover:text-orange-600">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-orange-600">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-orange-600">Home</a>
+                <a href="menu.html" class="block px-3 py-2 text-gray-700 hover:text-orange-600">Menu</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-orange-600">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-orange-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-20 pb-12 bg-gradient-to-r from-orange-400 to-yellow-500 text-white text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h2>
+            <p class="text-xl">Get in touch with us</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Visit Us</h3>
+                    <div class="space-y-4">
+                        <p><i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>123 Sunny Street, City, ST 12345</p>
+                        <p><i class="fas fa-phone text-orange-500 mr-2"></i>(555) 123-4567</p>
+                        <p><i class="fas fa-envelope text-orange-500 mr-2"></i>hello@sunnycafe.com</p>
+                        <p><i class="fas fa-clock text-orange-500 mr-2"></i>Mon-Fri: 7am-7pm, Sat-Sun: 8am-6pm</p>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-xl font-semibold mb-4">Location</h4>
+                        <img src="https://via.placeholder.com/400x300?text=Map" alt="Map" class="rounded-lg shadow-lg w-full">
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Send a Message</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-600 transition font-semibold">Send Message</button>
+                    </form>
+                    <p id="form-message" class="mt-4 hidden text-green-600"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2023 Sunny Cafe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form submission
+        const form = document.getElementById('contact-form');
+        const messageEl = document.getElementById('form-message');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+
+            try {
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (response.ok) {
+                    messageEl.textContent = 'Message sent successfully!';
+                    messageEl.classList.remove('hidden', 'text-red-600');
+                    messageEl.classList.add('text-green-600');
+                    form.reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                messageEl.textContent = 'Failed to send message. Please try again.';
+                messageEl.classList.remove('hidden', 'text-green-600');
+                messageEl.classList.add('text-red-600');
+            }
+        });
+    </script>
+</body>
+</html>
